@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; object-src 'none';  img-src 'self' data: ; font-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -21,14 +21,14 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>My App</title>
+    <title>Odoo</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
      -->
-
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -40,58 +40,86 @@
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Left panel content goes here</p>
+    <div class="panel panel-left panel-reveal" style="background: #efefef;">
+        <div class="top-menu-panel">
+            <h2 class="title-top-menu"><span id="title-top-menu">Islero prueba</span><i class="fa fa-angle-down" aria-hidden="true"></i></h2>
         </div>
-    </div>
+        <div class="content-block">
+            <a href="login.html"><h5><i class="fa fa-inbox" aria-hidden="true"></i> Puntos acumulados</h5></a>
+            <a href="listado.html"><h5><i class="fa fa-paper-plane" aria-hidden="true"></i> Comisiones generadas</h5></a>
+            <a id="cerrar-session-btn"><h5><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar Sesion</h5></a>
+        </div>
+    </div> 
 
     <!-- Views -->
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div class="view view-main navbar-fixed">
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
+            <div class="pages">
                 <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
+                <div data-page="index" class="page layout-white">
+                    <!-- Top Navbar-->
+                    <div class="navbar">
+                        <div class="navbar-inner">
+
+                            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                            <div class="left">
+                                <a href="#" class="back link">
+                                    <i class="icon icon-back"></i>
+                                </a>
+                            </div>
+                            <div class="center">Odoo</div>
+                            <div class="right">
+                                <!--
+                                  Right link contains only icon - additional "icon-only" class
+                                  Additional "open-panel" class tells app to open panel when we click on this link
+                                -->
+                                <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+                            <div style="text-align: center; padding-top: 50%;">
+                                <img src="images/logo.png" width="90" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
-                </div>
-            </div>
         </div>
     </div>
-
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
 </body>
+<style type="text/css">
+    .content-block{
 
+    }
+
+    .panel-reveal .content-block a{
+        color: #515071;
+        text-transform: uppercase;
+        font-weight: 100;
+        letter-spacing: 0.5px;
+    }
+
+    .panel-reveal .content-block a h5{
+        font-weight: 400;  
+    }
+
+    .toolbar-icons{
+        width: 100%;
+    }
+
+    .toolbar-icons i{
+        font-size: 20px;
+        width: 23.5%;
+        text-align: center;
+        border-right: 1px solid #ccc;
+    }
+</style>
 </html>

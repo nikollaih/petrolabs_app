@@ -1,5 +1,7 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    material: true //enable Material theme
+});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -16,6 +18,12 @@ $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
 
+//Despues de tres segundos de iniciar la aplicacion se carga la vista de login y se muestran las barras de navbar y toolbar
+setTimeout(function(){ 
+    
+    mainView.router.loadPage('dashboard.html'); 
+ 
+}, 1000);
 
 // Now we need to run the code that will be executed only for About page.
 
