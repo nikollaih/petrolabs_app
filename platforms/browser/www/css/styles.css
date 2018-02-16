@@ -13,3 +13,13 @@
 .statusbar-overlay {
     background: #000000;
 }
+
+.round-img{
+	border-radius: 50%;
+	border: 2px solid #003e43;
+}
+
+.navbar .navbar-inner .center{
+	font-size: 17px;
+	font-weight: 200;
+}
