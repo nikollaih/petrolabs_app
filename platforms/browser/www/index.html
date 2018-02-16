@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; object-src 'none';  img-src 'self' data: ; font-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'self' 'unsafe-inline'; object-src 'none';  img-src * 'self' data: ; font-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -42,7 +42,11 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal" style="background: #efefef;">
         <div class="top-menu-panel">
-            <h2 class="title-top-menu"><span id="title-top-menu">Islero prueba</span><i class="fa fa-angle-down" aria-hidden="true"></i></h2>
+            <div class="content-menu-top">
+                <h2 class="title-top-menu"><span id="title-top-menu">Cargando...</span></h2>
+                <p class="subtitle-top-menu" id="ciudad-menu"></p>
+                <p class="subtitle-top-menu" id="estacion-menu"></p>
+            </div> 
         </div>
         <div class="content-block">
             <a href="login.html"><h5><i class="fa fa-inbox" aria-hidden="true"></i> Puntos acumulados</h5></a>
@@ -92,9 +96,12 @@
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
     <script type="text/javascript" src="js/ventas.js"></script>
+    <script type="text/javascript" src="js/general.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
 </body>
 <style type="text/css">
     .content-block{
