@@ -15,7 +15,6 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
-    console.log("Device is ready!");
     conexionDB();
     tablasInicialesDB();
     usuarioConectado();
@@ -39,11 +38,11 @@ $$(document).on('deviceready', function() {
 
 // Now we need to run the code that will be executed only for About page.
 
-// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
-
-})
+//We can also add callback for all pages:
+myApp.onPageInit('*', function (e) {
+     // Do something here when page loaded and initialized
+     myApp.closePanel();
+ });
 
 // Option 2. Using one 'pageInit' event handler for all pages:
 $$(document).on('pageInit', function (e) {
@@ -51,11 +50,25 @@ $$(document).on('pageInit', function (e) {
     var page = e.detail.page;
 
     if (page.name === 'dashboard') {
+        obtenerProductos();
         // Following code will be executed for page with data-page attribute equal to "about"
-        myApp.alert('Here comes About page');
         $$('#title-top-menu').html(user['nombre'] + " " + user['apellidos']);
-        $$('#ciudad-menu').html(user['nombre_ciudad']);
-        $$('#estacion-menu').html(user['nombre_estaciones']);
+        $$('#ciudad-menu').html('<i class="fa fa-map-marker"></i>' + user['nombre_ciudad']);
+        $$('#estacion-menu').html('<i class="fa fa-tint"></i>' + user['nombre_estaciones']);
+    }
+
+    if (page.name === 'seleccionar-incentivo') {
+        // Following code will be executed for page with data-page attribute equal to "about"
+        obtenerIncentivos();
+    }
+
+    if (page.name === 'comisiones_productos') {
+        $$('.titulo-pagina').html(fecha_comisiones);
+        cargarProductosComisiones(productos_comisiones);
+    }
+
+    if (page.name === 'comisiones_productos_anio') {
+        generarFechasComisiones(2018);
     }
 })
 
