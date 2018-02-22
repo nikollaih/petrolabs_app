@@ -30,9 +30,130 @@
 
 #title-top-menu{
   font-size: 17px;
+  color: #fff;
+  white-space: inherit;
 }
 
 .subtitle-top-menu{
   margin: 0;
   text-transform: capitalize;
+  color: #fff;
+}
+
+.subtitle-top-menu i{
+  color: #fff;
+  font-size: 15px;
+  width: 20px;
+}
+
+.block{
+  margin: 35px 0;
+  padding: 0 15px;
+  color: #6d6d72;
+}
+
+.display-block{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.popup-venta .item-content{
+  padding: 0;
+  padding-left: 0 !important;
+}
+
+.slt-incentivo.active{
+  color: #00bb1a;
+}
+
+#lista-incentivos .item-inner{
+  background-image: none;
+  padding-right: 0;
+}
+
+#lista-incentivos .fa-check{
+  padding: 8px 15px 25px 15px;
+}
+
+.subnivel-comision{
+  display: none;
+}
+
+.subnivel-comision .item-inner{
+  background-image: none !important;
+}
+
+#lista-productos .item-title{
+  font-size: 14px;
+  font-weight: 600;
+  white-space: initial !important;
+}
+
+#img-sell{
+  width: 120px;
+  border: 3px solid #003e43;
+  border-radius: 50%;
+}
+
+#titulo-popup-venta{
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #003e43;
+}
+
+.content-img-sell{
+  text-align: center;
+}
+
+.mensaje-lista{
+  font-size: 14px;
+  text-align: center;
+  padding: 15px;
+}
+
+.bottom-info{
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #fff;
+  z-index: 9;
+}
+
+.list-block ul:after, .list-block ul:before{
+  display: none !important;
+}
+
+.panel-reveal .content-block a{
+  color: #fff !important;
+}
+
+.panel-reveal .content-block h5{
+  margin: 8px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #ffffff1c;
+}
+
+.panel-reveal .content-block i{
+  font-size: 15px;
+  width: 20px;
+  text-align: center;
+}
+
+#cerrar-session-btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+#cerrar-session-btn h5{
+  border-bottom: 0 !important;
 }

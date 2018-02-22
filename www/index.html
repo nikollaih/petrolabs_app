@@ -21,7 +21,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>Odoo</title>
+    <title>Petrolabs</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -40,7 +40,7 @@
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal" style="background: #efefef;">
+    <div class="panel panel-left panel-reveal" style="background: rgb(0, 62, 67);">
         <div class="top-menu-panel">
             <div class="content-menu-top">
                 <h2 class="title-top-menu"><span id="title-top-menu">Cargando...</span></h2>
@@ -48,9 +48,12 @@
                 <p class="subtitle-top-menu" id="estacion-menu"></p>
             </div> 
         </div>
-        <div class="content-block">
-            <a href="login.html"><h5><i class="fa fa-inbox" aria-hidden="true"></i> Puntos acumulados</h5></a>
-            <a href="listado.html"><h5><i class="fa fa-paper-plane" aria-hidden="true"></i> Comisiones generadas</h5></a>
+        <div style="border-top: 2px solid #003e43" class="content-block">
+            <a href="dashboard.html"><h5><i class="fa fa-edit" aria-hidden="true"></i> Registrar venta</h5></a>
+            <a href="comisiones_productos_anio.html"><h5><i class="fa fa-dollar" aria-hidden="true"></i> Comisiones liquidadas</h5></a>
+            <a href="comisiones_productos_anio.html"><h5><i class="fa fa-folder" aria-hidden="true"></i> Comisiones sin liquidar</h5></a>
+            <a href="seleccionar-incentivo.html"><h5><i class="fa fa-gift" aria-hidden="true"></i> Seleccionar incentivo</h5></a>
+            <a href="seleccionar-incentivo.html"><h5><i class="fa fa-user" aria-hidden="true"></i> Perfil</h5></a>
             <a id="cerrar-session-btn"><h5><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar Sesion</h5></a>
         </div>
     </div> 
@@ -63,31 +66,12 @@
             <div class="pages">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page layout-white">
-                    <!-- Top Navbar-->
-                    <div class="navbar">
-                        <div class="navbar-inner">
-
-                            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                            <div class="left">
-                                <a href="#" class="back link">
-                                    <i class="icon icon-back"></i>
-                                </a>
-                            </div>
-                            <div class="center">Odoo</div>
-                            <div class="right">
-                                <!--
-                                  Right link contains only icon - additional "icon-only" class
-                                  Additional "open-panel" class tells app to open panel when we click on this link
-                                -->
-                                <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
                             <div style="text-align: center; padding-top: 50%;">
-                                <img src="images/logo.png" width="90" alt="">
+                                <img src="images/logo.png" width="150" alt="">
                             </div>
                         </div>
                     </div>
@@ -95,6 +79,49 @@
             </div>
         </div>
     </div>
+    <div class="popup popup-venta">
+        <div class="content-block">
+            <p style="text-align: right;"><a href="#" class="close-popup">Cerrar</a></p>
+            <div class="content-img-sell">
+                <h2 id="titulo-popup-venta">Registrar Venta</h2>
+                <img id="img-sell" src="https://aditivospetrolabs.com/wp-content/uploads/2017/08/ad-blue-petrolabs.jpg">
+                <h3 id="producto-popup-venta"></h3>
+            </div>
+            <div style="margin-top: 0;" class="list-block">
+                <input type="hidden" name="" id="producto-venta">
+                <ul>
+                    <!-- Select -->
+                    <li> 
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Cantidad</div>
+                          <div class="item-input">
+                            <input class="" id="cantidad-venta" style="text-align: right;" type="number" placeholder="1" value="1" min="1">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- Select -->
+                   
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Fecha</div>
+                          <div class="item-input">
+                            <input style="text-align: right;" type="date" placeholder="Fecha de venta" id="fecha-venta">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <p><a id="registrar-venta-btn" class="button active button-fill">Guardar</a></p>
+                      <!-- <a style="color: #a3498b;" href="#" class="item-link list-button btn-agregar-prestamo">Guardar</a> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/database.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
@@ -102,6 +129,7 @@
     <script type="text/javascript" src="js/ventas.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
     <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/productos.js"></script>
 </body>
 <style type="text/css">
     .content-block{

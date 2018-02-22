@@ -22,7 +22,7 @@ function tablasInicialesDB(){
    //    tx.executeSql('DROP TABLE usuario');
    //  });
   db.transaction(function(tx) {
-    tx.executeSql('CREATE TABLE IF NOT EXISTS usuario (id_usuario, ciudad, rol, cedula, nombre, apellidos, telefono, email, clave, estado, id_rol, nombre_rol, id_ciudad, departamento, nombre_ciudad, id_islero, usuario, estacion, tipo_incentivo, rut, token, id_estacion, nombre_estaciones)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS usuario (id_usuario, ciudad, rol, cedula, nombre, apellidos, telefono, email, clave, estado, id_rol, nombre_rol, id_ciudad, departamento, nombre_ciudad, id_islero, usuario, estacion, tipo_incentivo, rut, token, id_estacion, nombre_estaciones, id_tipo)');
   }, function(error) {
       myApp.hidePreloader();
       myApp.alert('Ha ocurrido un error en la base de datos', 'Error');
